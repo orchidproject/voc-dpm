@@ -1,14 +1,13 @@
-function detections = cascade_image_reduced( image )
+function detections = cascade_image_reduced( image, interval, threshold )
 load('INRIA/inriaperson_final');
-model.interval = 10;
-detections = test(image,model);
+model.interval = interval;
+detections = test(image,model,threshold);
 end
 
-function det = test(im, model)
-thresh = -0.5;
+function det = test(im, model,threshold)
 pca = 5;
 orig_model = model;
-csc_model = cascade_model(model, '2007', pca, thresh);
+csc_model = cascade_model(model, '2007', pca, threshold);
 orig_model.thresh = csc_model.thresh;
 
 pyra = featpyramid(double(im), csc_model);
