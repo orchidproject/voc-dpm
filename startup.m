@@ -28,6 +28,7 @@ if isempty(G_STARTUP)
   for i = 1:length(incl)
     addpath(genpath(incl{i}));
   end
+  addpath('/home/jack/matlab/matlab_gen/msggen');
   conf = voc_config();
   fprintf('%s is set up\n', conf.version);
   clear conf i incl;

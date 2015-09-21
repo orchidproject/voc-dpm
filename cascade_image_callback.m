@@ -40,12 +40,12 @@ fprintf('detection took %f\n', toc(det_time));
 global detection_pub;
 if isempty(detection_pub) || ~strcmp(detection_pub.TopicName,'/detections') || ~strcmp(detection_pub.MessageType,'mosaic_msgs/Detections')
     fprintf('initialised detection publisher\n');
-    detection_pub = rospublisher('/detections','mosaic_msgs/Detections');
+    detection_pub = rospublisher('/ardrone/bottom/detections','mosaic_msgs/Detections');
 end
 global annotated_img_pub;
 if isempty(annotated_img_pub) || ~strcmp(annotated_img_pub.TopicName,'/annotated_image') || ~strcmp(annotated_img_pub.MessageType,'sensor_msgs/Image')
     fprintf('initialised annotated image publisher\n');
-    annotated_img_pub = rospublisher('/annotated_image','sensor_msgs/Image');
+    annotated_img_pub = rospublisher('/ardrone/bottom/annotated_image','sensor_msgs/Image');
 end
 detection_msg = rosmessage(detection_pub);
 annotated_img_msg = rosmessage(annotated_img_pub);
