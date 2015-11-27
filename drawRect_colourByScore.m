@@ -26,3 +26,4 @@ function [rect_img] = drawRect_colourByScore( img, score, x1, y1, x2, y2, line_p
     rect_img(y1:y2,max(x1-line_padding,1):min(x1+line_padding,size(img,2)),3)=255*cmap(map_index,3);
     rect_img(y1:y2,max(x2-line_padding,1):min(x2+line_padding,size(img,2)),3)=255*cmap(map_index,3);
 end
+
