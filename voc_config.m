@@ -33,10 +33,10 @@ function conf = voc_config(varargin)
 % Parent directory that everything (model cache, VOCdevkit) is under
 % I recommend making a symlink to your BASE_DIR named 'cachedir'.
 % e.g., cachedir -> /var/tmp/rbg/
-BASE_DIR    = 'cachedir';
+BASE_DIR    = '/home/jack/catkin_ws/src/mosaic_ros/mosaic_vision/voc-dpm';
 
 % PASCAL dataset year to use
-PASCAL_YEAR = '2007';
+PASCAL_YEAR = '2011';
 
 % Models are stored in BASE_DIR/PROJECT/PASCAL_YEAR/
 % e.g., /var/tmp/rbg/voc-release5/2007/
@@ -152,7 +152,7 @@ if exist(conf.pascal.dev_kit) == 0
                   conf.pascal.dev_kit);
     fprintf([msg '\n\n']);
   end
-  return;
+%   return;
 end
 
 % VOCinit brings VOCopts into scope                  
