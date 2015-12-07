@@ -16,8 +16,8 @@ if has(rosparam_tree,'interval')
 else
     interval = 5;
 end
-if has(rosparam_tree,'threshold')
-    threshold = get(rosparam_tree,'threshold');
+if has(rosparam_tree,'detection_threshold')
+    threshold = get(rosparam_tree,'detection_threshold');
 else
     threshold = -0.5;
 end
@@ -33,7 +33,7 @@ end
 casc_model.interval = interval;
 det_time = tic;
 detections = cascade_test(image,casc_model,threshold);
-fprintf('detection took %f\n', toc(det_time));
+fprintf('detection took %f with threshold %f\n', toc(det_time), threshold);
 
 % Checking if global publisher objects are initialised and if not then
 % initialising them.
