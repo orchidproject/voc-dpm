@@ -80,11 +80,11 @@ end
 detection_msg = rosmessage(detection_pub);
 
 % Populating output messages.
-roi_array_element = rosmessage('sensor_msgs/RegionOfInterest');
 roi_array = [];
 scores_array = [];
 fprintf('number of detections = %d\n',size(detections,1));
 for i = 1:size(detections,1)
+    roi_array_element = rosmessage('sensor_msgs/RegionOfInterest');
     roi_array_element.XOffset = round(detections(i,1));
     roi_array_element.Width = round(detections(i,2));
     roi_array_element.YOffset = round(detections(i,3)-detections(i,1));
