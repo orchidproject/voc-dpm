@@ -1,0 +1,2 @@
+ROS_MASTER_URI,INPUT_TOPIC,DETECTION_TOPIC,ANNOTATED_TOPIC,SHUTDOWN_TOPIC
+http://10.0.1.15:11311,/ardrone/throttled/ground_truth/image,/ardrone/throttled/detections,/ardrone/bottom/annotated_image,/matlab/shutdown

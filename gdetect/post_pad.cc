@@ -22,7 +22,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
   const double padx = mxGetScalar(prhs[2]);
   const double val = mxGetScalar(prhs[3]);
   const mwSize *A_dims = mxGetDimensions(prhs[0]);
-  const mwSize B_dims[] = { A_dims[0] + pady, A_dims[1] + padx };
+  const mwSize B_dims[] = { A_dims[0] + static_cast<mwSize>(pady), A_dims[1] + static_cast<mwSize>(padx) };
   mxArray *mx_B = mxCreateNumericArray(2, B_dims, mxDOUBLE_CLASS, mxREAL);
   double *B = (double *)mxGetPr(mx_B);
   const double *A = (double *)mxGetPr(prhs[0]);

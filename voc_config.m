@@ -33,7 +33,7 @@ function conf = voc_config(varargin)
 % Parent directory that everything (model cache, VOCdevkit) is under
 % I recommend making a symlink to your BASE_DIR named 'cachedir'.
 % e.g., cachedir -> /var/tmp/rbg/
-BASE_DIR    = '/home/jack/catkin_ws/src/mosaic_ros/mosaic_vision/voc-dpm';
+BASE_DIR    = pwd;
 
 % PASCAL dataset year to use
 PASCAL_YEAR = '2011';
