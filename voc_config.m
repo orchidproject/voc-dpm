@@ -244,10 +244,14 @@ if isempty(voc_opts) || ~voc_opts.isKey(key)
     voc_opts = containers.Map();
   end
   tmp = pwd;
-  cd(conf.pascal.dev_kit);
-  addpath([cd '/VOCcode']);
-  VOCinit;
-  cd(tmp);
+  if ~isdeployed
+      cd(conf.pascal.dev_kit);
+      addpath([cd '/VOCcode']);
+      VOCinit;
+      cd(tmp);
+  else
+      VOCinit;
+  end
   voc_opts(key) = VOCopts;
 end
 VOCopts = voc_opts(key);
